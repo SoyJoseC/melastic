@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+    <title>{% translate "CatPal: Inicio" %}</title>
+{% endblock %}
+{% block content%}
+
+<style>
+    #listaDoc li{
+        list-style: none;
+        height: 75px;
+        width: 80%;
+        background-color: rgba(120, 107, 240, 0.151);
+        border-left: 5px solid rgba(120, 107, 240, 0.562);
+        margin: 15px;
+        padding-left: 10px;
+
+
+    }
+
+    .cat_tree_container li{
+        list-style: none;
+    }
+
+</style>
+
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5 pt-5">
+    <div class="container">
+
+      <!--Section: Jumbotron-->
+      <section class="card wow fadeIn" style="background-image: url('/static/gradient1.jpg');">
+
+        <!-- Content -->
+        <div class="card-body text-white text-center py-5 px-5 my-5">
+
+          <h1 class="mb-4">
+            <strong>{%translate "Welcome to Melastic!!!" %}</strong>
+          </h1>
+          <p>
+            <h3>{% translate "An amazing tool for the management of Mendeley's documents" %}</h3>
+
+          
+        </div>
+        <!-- Content -->
+      </section>
+      <!--Section: Jumbotron-->
+
+
+
+
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+
+
+{% endblock %}
