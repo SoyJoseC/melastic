@@ -1,0 +1,11 @@
+*.pyc
+*pycache*
+db.sqlite3
+melastic/*
+staticfiles/*
+
+#Text backup files
+*.bak
+
+#Database
+*.sqlite3
