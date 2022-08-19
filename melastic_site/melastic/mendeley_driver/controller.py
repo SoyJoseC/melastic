@@ -18,8 +18,16 @@ ACCESS_TOKEN = None
 
 session = None
 
-def authenticate(user_mail: str, user_password) -> None:
-    """This function authenticate the app with the given credentials"""
+def authenticate(user_mail: str, user_password: str) -> None:
+    """This function authenticate the app with the given credentials
+
+    Args:
+        user_mail (str): email address that the user registered on Mendeley's site
+        user_password (str): passwrd that the user registered on Mendeley's site
+
+    Raises:
+        exc: when we couldn't authenticate or other kind of error
+    """
 
     try:
         # These values should match the ones supplied when registering your application.

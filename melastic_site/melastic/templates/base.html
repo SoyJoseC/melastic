@@ -61,52 +61,17 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item  nav_bar_button" ><a class="nav-link" href="{% url 'home' %}">
-          <h4  class="blue-text">Catpal</h4>
+          <h4  class="blue-text">Melastic</h4>
         </a></li>
-      {% if user.is_authenticated %}
-
-          <li class="nav-item  nav_bar_button">
-          <a class="nav-link" href="{% url 'groups' %}"><i class="fas fa-users"></i>  My Groups</a>
-
-
-
-
-          {% if user.is_staff %}
-          <li class="nav-item  nav_bar_button_admin">
-          <a class="nav-link" href="/admin/"><i class="fas fa-toolbox"></i> {% translate "Django's Admin" %}</a>
-        </li>
-          <li class="nav-item  nav_bar_button_admin">
-          <a class="nav-link" href="{% url 'admin_groups' %}">{%translate "Manage Groups"%}</a>
-        </li>
-          <li class="nav-item  nav_bar_button_admin">
-          <a class="nav-link" href="{% url 'admin_users' %}">{% translate "Manage users" %}</a>
-        </li>
-          <li class="nav-item  nav_bar_button_admin">
-          <a class="nav-link" href="{% url 'admin_add_group' %}">{% translate "Add Groups" %}</a>
-        </li>
-          {% endif %}
-
-    {% endif %}
+    
 
 
     </ul>
 
-      #TODO add a navbar-toggler inside of this to finally complete the expected experience
-
-          <!-- Right -->
-          <ul class="navbar-nav nav-flex-icons">
-            {% if user.is_authenticated %}
-            <li class="nav-item active nav_bar_button">
-          <a class="nav-link" href="{% url 'logout' %}">{% translate "Logout" %}: {{ user.username }}</a>
-              </li><li class="nav-item active nav_bar_button">
-          <a class="nav-link" href="{% url 'edit_profile' %}">{% translate "Edit profile" %}</a>
-              </li>
+      
       </ul>
 
-              {% else %}
-
-              {% endif %}
-
+              
         </div>
 
       </div>
@@ -137,7 +102,7 @@
       <br>
 
       <a href="https://github.com/SoyJoseC/CatPalOfficial" target="_blank">
-        <i class="fab fa-github mr-3"></i>  {% translate "Catpal by:" %}  @SoyJoseC @EdFer2025
+        <i class="fab fa-github mr-3"></i>  {% translate "Melastic by:" %}  @SoyJoseC
       </a>
       <br>
       <br>

@@ -1,12 +1,22 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from melastic.models import MendeleyGroup, Document
+from melastic.forms import AddGroupForm
+import melastic.utils as utils
+from django.shortcuts import redirect
+#FIXME
+import melastic.mendeley_driver as md
+
 # Create your views here.
 
-class HomeVie(TemplateView):
-    ...
+class HomeView(TemplateView):
+    """"Just a template view for the landing page."""
+    template_name = 'index.html'
 
-
+#TODO don't prompt internal server errors in the HTML
 def admin_add_group(request):
+    """Implementation of a controller that will allow the user to add his/her groups and its documents
+    to the database."""
     if request.user.is_staff and request.user.is_staff:
         context = {}
         context['form_prueba'] = AddGroupForm(auto_id='user_data2')
@@ -25,6 +35,8 @@ def admin_add_group(request):
                     context['mendeley_user'] = mendeley_user
                     context['mendeley_password'] = utils.fernet.encrypt(mendeley_password.encode('utf-8'))
                 except Exception as exc:
+                    #FIXME change the way we storage this, is better to prompt this in console and promt to the final user
+                    # internal server error
                     context['errors'] = [str(exc)]
 
             elif request.POST['form_id'] == 'groups_data':
